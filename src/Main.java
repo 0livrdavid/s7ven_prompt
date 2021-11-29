@@ -10,7 +10,10 @@ public class Main {
         do {
             System.out.println("SEJA BEM-VINDO AO S7VEN!");
             System.out.println("________________________");
-            System.out.println("1 - Abrir nova conta");
+            System.out.println("1 - Adicionar Nova Disciplina");
+            System.out.println("2 - Adicionar Notas a Disciplina");
+            System.out.println("3 - Listar Todas Disciplinas");
+            System.out.println("4 - Informar Maiores Notas");
             System.out.println("_______________________________");
             System.out.print("Escolha um número para prosseguir: ");
             opcao = input.nextInt();
@@ -23,7 +26,7 @@ public class Main {
 
             }
 
-        }while (opcao != 0);
+        } while (opcao != 0);
         if (opcao == 0) {
             System.out.println("Muito obrigado por usar os nossos serviços!");
         }
