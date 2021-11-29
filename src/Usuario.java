@@ -1,10 +1,13 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Usuario {
     // ATRIBUTOS
     private String email;
     private String senha;
     ArrayList<Disciplina> disciplinas = new ArrayList<>();
+
+    Scanner entrada = new Scanner(System.in);
 
     // CONSTRUTORES
     public Usuario() {
@@ -41,6 +44,12 @@ public class Usuario {
             if (disciplinas.get(i).getNomeDisciplina().equals(d)) {
                 disciplinas.remove(i);
             }
+        }
+    }
+
+    public void listarDisciplinas(Disciplina d){
+        for (int i = 0; i <= disciplinas.size(); i++) {
+            disciplinas.get(i).getNomeDisciplina();
         }
     }
 
