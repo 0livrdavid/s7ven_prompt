@@ -17,9 +17,7 @@ public class Main {
 
             switch (opcao){
                 case 1:
-                    System.out.println("====== BANCO PARA TREINAR ======");
-                    System.out.println("Você escolheu abrir nova conta!");
-                    nc.abrirConta();
+                    System.out.println("");
                     break;
                 default:
 
