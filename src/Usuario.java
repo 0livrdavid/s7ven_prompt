@@ -23,9 +23,7 @@ public class Usuario {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+    public void setEmail(String email) { this.email = email; }
 
     public String getSenha() {
         return senha;
@@ -40,7 +38,7 @@ public class Usuario {
     }
 
     public void removeDisciplinas(Disciplina d) {
-        for (int i = 0; i >= disciplinas.size(); i++) {
+        for (int i = 0; i <= disciplinas.size(); i++) {
             if (disciplinas.get(i).getNomeDisciplina().equals(d)) {
                 disciplinas.remove(i);
             }
