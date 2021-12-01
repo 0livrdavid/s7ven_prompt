@@ -18,16 +18,16 @@ public class Main {
             System.out.print("Escolha um número para prosseguir: ");
             opcao = input.nextInt();
 
-            switch (opcao){
+            switch (opcao) {
                 case 1:
                     System.out.println("Digite o nome da disciplina");
-                    disc = input.nextLine();
+                    disc = input.toString();
                     user.adicionaDisciplinas(disc);
                     break;
                 case 2:
                     user.listarDisciplinas();
                     System.out.println("Digite o número da disciplina a ser adicionado a nota:");
-                    disc = input.nextLine();
+                    disc = input.toString();
                     user.adicionaDisciplinas(disc);
                     break;
                 case 3:
@@ -35,7 +35,6 @@ public class Main {
                     break;
                 default:
                     break;
-
             }
         } while (opcao != 0);
 
