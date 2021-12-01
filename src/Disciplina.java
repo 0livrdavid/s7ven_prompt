@@ -7,19 +7,77 @@ public class Disciplina {
     ArrayList<Float> media = new ArrayList<>();
     ArrayList<Float> mediaFinal = new ArrayList<>();
 
-    public void adicionarNotas(Disciplina d){
-        for (int i=0; i <= disciplinas.size(); i++){
-            if (disciplinas.get(i).getNomeDisciplina().equals(d)) {
-                System.out.print("Digite a primeira nota:");
-                disciplinas.get(i).setNota1(entrada.nextFloat());
-                System.out.print("Digite a segunda nota:");
-                disciplinas.get(i).setNota2((entrada.nextFloat()));
+    public Disciplina() {
+    }
+
+    public Disciplina(ArrayList<String> nomeDisciplina, ArrayList<Float> nota1, ArrayList<Float> nota2, ArrayList<Float> media, ArrayList<Float> mediaFinal) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.nota1 = nota1;
+        this.nota2 = nota2;
+        this.media = media;
+        this.mediaFinal = mediaFinal;
+    }
+
+    public ArrayList<String> getNomeDisciplina() {
+        return nomeDisciplina;
+    }
+
+    public void setNomeDisciplina(ArrayList<String> nomeDisciplina) {
+        this.nomeDisciplina = nomeDisciplina;
+    }
+
+    public ArrayList<Float> getNota1() {
+        return nota1;
+    }
+
+    public void setNota1(ArrayList<Float> nota1) {
+        this.nota1 = nota1;
+    }
+
+    public ArrayList<Float> getNota2() {
+        return nota2;
+    }
+
+    public void setNota2(ArrayList<Float> nota2) {
+        this.nota2 = nota2;
+    }
+
+    public ArrayList<Float> getMedia() {
+        return media;
+    }
+
+    public void setMedia(ArrayList<Float> media) {
+        this.media = media;
+    }
+
+    public ArrayList<Float> getMediaFinal() {
+        return mediaFinal;
+    }
+
+    public void setMediaFinal(ArrayList<Float> mediaFinal) {
+        this.mediaFinal = mediaFinal;
+    }
+
+    public void adicionaDisciplinas(String d) {
+        nomeDisciplina.add(d);
+    }
+
+    public void removeDisciplinas(int d) {
+        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
+            if (this.nomeDisciplina.get(i).equals(d)) {
+                this.nomeDisciplina.remove(i);
+                this.nota1.remove(i);
+                this.nota2.remove(i);
+                this.media.remove(i);
+                this.mediaFinal.remove(i);
             }
         }
     }
 
-    public void statusNotas(){
-
+    public void listarDisciplinas(){
+        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
+            System.out.println("|| "+i+" - "+this.nomeDisciplina.get(i));
+        }
     }
 
 }
