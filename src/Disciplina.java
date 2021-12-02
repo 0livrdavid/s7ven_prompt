@@ -75,7 +75,7 @@ public class Disciplina {
     }
 
     public void listarDisciplinas(){
-        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
+        for (int i = 0; i < nomeDisciplina.size(); i++) {
             System.out.println("|| "+i+" - "+this.nomeDisciplina.get(i));
         }
     }
