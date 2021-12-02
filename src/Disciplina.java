@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Disciplina {
+    Scanner input = new Scanner(System.in);
+
     ArrayList<String> nomeDisciplina = new ArrayList<>();
     ArrayList<Float> nota1 = new ArrayList<>();
     ArrayList<Float> nota2 = new ArrayList<>();
@@ -58,8 +61,10 @@ public class Disciplina {
         this.mediaFinal = mediaFinal;
     }
 
-    public void adicionaDisciplinas(String d) {
-        nomeDisciplina.add(d);
+    public void adicionaDisciplinas() {
+        System.out.println("Digite o nome da disciplina");
+        String disc = input.nextLine();
+        nomeDisciplina.add(disc);
     }
 
     public void removeDisciplinas(int d) {
@@ -80,4 +85,8 @@ public class Disciplina {
         }
     }
 
+    public void adicionaNota(){
+        System.out.println("Digite o número da disciplina a ser adicionado a nota:");
+        String disc = input.next();
+    }
 }

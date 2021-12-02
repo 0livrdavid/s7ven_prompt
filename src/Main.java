@@ -21,24 +21,17 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    limpar();
-                    System.out.println("Digite o nome da disciplina");
-                    disc = input.next();
-                    user.adicionaDisciplinas(disc);
-                    enter = input.next();
+                    //limpar();
+                    user.adicionaDisciplinas();
                     break;
                 case 2:
-                    limpar();
+                    //limpar();
                     user.listarDisciplinas();
-                    System.out.println("Digite o número da disciplina a ser adicionado a nota:");
-                    disc = input.next();
-                    user.adicionaDisciplinas(disc);
-                    enter = input.next();
+                    user.adicionaNota();
                     break;
                 case 3:
-                    limpar();
+                    //limpar();
                     user.listarDisciplinas();
-                    enter = input.next();
                     break;
                 default:
                     break;
