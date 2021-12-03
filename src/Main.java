@@ -10,12 +10,13 @@ public class Main {
 
         System.out.println("SEJA BEM-VINDO AO S7VEN!");
         do {
-            System.out.println("________________________");
+            System.out.println("________________________________");
             System.out.println("1 - Adicionar Nova Disciplina");
             System.out.println("2 - Adicionar Notas a Disciplina");
             System.out.println("3 - Listar Todas Disciplinas");
             System.out.println("4 - Informar Maiores Notas");
-            System.out.println("_______________________________");
+            System.out.println("5 - Zerar Banco");
+            System.out.println("________________________________");
             System.out.print("Escolha um número para prosseguir: ");
             opcao = input.nextInt();
 
@@ -36,7 +37,12 @@ public class Main {
                     break;
                 case 4:
                     user.limpatela();
+                    user.maioresNotas();
                     user.listarDisciplinas();
+                    break;
+                case 5:
+                    user.limpatela();
+                    user.apagarBanco();
                     break;
                 default:
                     break;

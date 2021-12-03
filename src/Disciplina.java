@@ -72,16 +72,25 @@ public class Disciplina {
     }
 
     public void removeDisciplinas() {
-        System.out.println("Digite o número da disciplina a ser removida:");
-        int disc = input.nextInt();
-        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
-            if (this.nomeDisciplina.get(i).equals(disc)) {
-                this.nomeDisciplina.remove(i);
-                this.nota1.remove(i);
-                this.nota2.remove(i);
-                this.media.remove(i);
-                this.mediaFinal.remove(i);
+        int disc;
+
+        do {
+            System.out.println("Digite o id da disciplina a ser removida:");
+            disc = input.nextInt();
+            if (disc >= 0 && disc < this.nomeDisciplina.size()) {
+                break;
             }
+        } while (true);
+
+        System.out.println("Tem certeza que deseja continuar? (S ou N)");
+        String resp = input.next();
+
+        if (resp == "s") {
+            this.nomeDisciplina.remove(disc);
+            this.nota1.remove(disc);
+            this.nota2.remove(disc);
+            this.media.remove(disc);
+            this.mediaFinal.remove(disc);
         }
     }
 
@@ -106,11 +115,9 @@ public class Disciplina {
             }
         } while (true);
 
-        System.out.println(disc);
-
         System.out.println("Digite a primeira nota:");
         Float nota1 = input.nextFloat();
-        System.out.println("Digite a segunda nota (coloque '0,00' se ainda não tiver o valor):");
+        System.out.println("Digite a segunda nota (coloque '0' se ainda não tiver o valor):");
         Float nota2 = input.nextFloat();
 
         this.nota1.set(disc,nota1);
@@ -119,9 +126,49 @@ public class Disciplina {
         float media_nota = ((this.nota1.get(disc)*2)+(this.nota2.get(disc)*3))/5;
         this.media.set(disc,media_nota);
 
-        if (this.nota2.get(disc) != 0.00) {
+        if (this.nota2.get(disc) != 0.00 && this.media.get(disc) < 70) {
             float media_final_nota = (250-(this.media.get(disc)*3))/2;
             this.mediaFinal.set(disc,media_final_nota);
+        }
+    }
+
+    public void maioresNotas(){
+        String maior_nota1 = "0.00";
+        String maior_nota2 = "0.00";
+        String maior_semestre = "0.00";
+
+        for (int i = 0; i < this.nomeDisciplina.size(); i++) {
+            if (Float.parseFloat(maior_nota1) < this.nota1.get(i)) {
+                maior_nota1 = this.nomeDisciplina.get(i)+": ";
+                maior_nota1 += String.valueOf(this.nota1.get(i));
+            }
+            if (Float.parseFloat(maior_nota2) < this.nota2.get(i)) {
+                maior_nota1 = this.nomeDisciplina.get(i)+": ";
+                maior_nota2 += String.valueOf(this.nota2.get(i));
+            }
+            if (Float.parseFloat(maior_semestre) < this.media.get(i)) {
+                maior_semestre = this.nomeDisciplina.get(i)+": ";
+                maior_semestre += String.valueOf(this.media.get(i));
+            }
+        }
+
+        System.out.println("1º Bimestre -> " + maior_nota1);
+        System.out.println("2º Bimestre -> " + maior_nota1);
+        System.out.println("Média Semestral -> " + maior_nota1);
+    }
+
+    public void apagarBanco() {
+        System.out.println("Tem certeza que deseja continuar? (S ou N)");
+        String resp = input.next();
+
+        if (resp == "s") {
+            for (int i = 0; i < nomeDisciplina.size(); i++) {
+                this.nomeDisciplina.remove(i);
+                this.nota1.remove(i);
+                this.nota2.remove(i);
+                this.media.remove(i);
+                this.mediaFinal.remove(i);
+            }
         }
     }
 
