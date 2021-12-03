@@ -20,7 +20,7 @@ public class Main {
             System.out.println("5 - Supor Notas");
             System.out.println("6 - Apagar Disciplina");
             System.out.println("7 - Apagar Banco");
-            System.out.println("9 - Adicionar dados");
+            System.out.println("8 - Adicionar dados");
             System.out.println("________________________________");
             System.out.print("Escolha um número para prosseguir: ");
             opcao = input.nextInt();
@@ -57,11 +57,12 @@ public class Main {
                     user.limpatela();
                     user.apagarBanco();
                     break;
-                case 9:
+                case 8:
                     user.limpatela();
                     user.adicionarDados();
                     break;
                 default:
+                    user.limpatela();
                     break;
             }
         } while (opcao != 0);

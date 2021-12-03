@@ -11,56 +11,6 @@ public class Disciplina {
     ArrayList<Float> media = new ArrayList<>();
     ArrayList<Float> mediaFinal = new ArrayList<>();
 
-    public Disciplina() {
-    }
-
-    public Disciplina(ArrayList<String> nomeDisciplina, ArrayList<Float> nota1, ArrayList<Float> nota2, ArrayList<Float> media, ArrayList<Float> mediaFinal) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.nota1 = nota1;
-        this.nota2 = nota2;
-        this.media = media;
-        this.mediaFinal = mediaFinal;
-    }
-
-    public ArrayList<String> getNomeDisciplina() {
-        return nomeDisciplina;
-    }
-
-    public void setNomeDisciplina(ArrayList<String> nomeDisciplina) {
-        this.nomeDisciplina = nomeDisciplina;
-    }
-
-    public ArrayList<Float> getNota1() {
-        return nota1;
-    }
-
-    public void setNota1(ArrayList<Float> nota1) {
-        this.nota1 = nota1;
-    }
-
-    public ArrayList<Float> getNota2() {
-        return nota2;
-    }
-
-    public void setNota2(ArrayList<Float> nota2) {
-        this.nota2 = nota2;
-    }
-
-    public ArrayList<Float> getMedia() {
-        return media;
-    }
-
-    public void setMedia(ArrayList<Float> media) {
-        this.media = media;
-    }
-
-    public ArrayList<Float> getMediaFinal() {
-        return mediaFinal;
-    }
-
-    public void setMediaFinal(ArrayList<Float> mediaFinal) {
-        this.mediaFinal = mediaFinal;
-    }
 
     public void adicionaDisciplinas() {
         System.out.println("Digite o nome da disciplina");
@@ -221,33 +171,33 @@ public class Disciplina {
 
     public void adicionarDados() {
         nomeDisciplina.add("FUNDAMENTOS MATEMÁTICOS PARA COMPUTAÇÃO");
-        nota1.add((float) 100.00);
-        nota2.add((float) 0.00);
-        media.add((float) 0.00);
+        nota1.add((float) 81.00);
+        nota2.add((float) 75.00);
+        media.add((float) 77.40);
         mediaFinal.add((float) 0.00);
 
         nomeDisciplina.add("PARADIGMA DE ORIENTAÇÃO À OBJETO");
-        nota1.add((float) 100.00);
-        nota2.add((float) 0.00);
-        media.add((float) 0.00);
+        nota1.add((float) 72.00);
+        nota2.add((float) 69.00);
+        media.add((float) 70.20);
         mediaFinal.add((float) 0.00);
 
         nomeDisciplina.add("PROJETO INTEGRADOR: Processos de Arquitetura e Análise de Software");
-        nota1.add((float) 96.00);
-        nota2.add((float) 0.00);
-        media.add((float) 0.00);
+        nota1.add((float) 92.00);
+        nota2.add((float) 84.00);
+        media.add((float) 87.20);
         mediaFinal.add((float) 0.00);
 
         nomeDisciplina.add("ANÁLISE E PROJETO DE PRODUTOS DE SOFTWARE");
-        nota1.add((float) 73.00);
-        nota2.add((float) 0.00);
-        media.add((float) 0.00);
+        nota1.add((float) 64.00);
+        nota2.add((float) 75.00);
+        media.add((float) 70.60);
         mediaFinal.add((float) 0.00);
 
         nomeDisciplina.add("SISTEMAS OPERACIONAIS");
-        nota1.add((float) 86.00);
-        nota2.add((float) 0.00);
-        media.add((float) 0.00);
-        mediaFinal.add((float) 0.00);
+        nota1.add((float) 66.00);
+        nota2.add((float) 69.00);
+        media.add((float) 67.80);
+        mediaFinal.add((float) 0.00); 
     }
 }
