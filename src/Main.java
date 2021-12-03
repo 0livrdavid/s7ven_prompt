@@ -21,16 +21,17 @@ public class Main {
 
             switch (opcao) {
                 case 1:
-                    //limpar();
                     user.adicionaDisciplinas();
+                    user.limpatela();
                     break;
                 case 2:
-                    //limpar();
+                    user.limpatela();
                     user.listarDisciplinas();
                     user.adicionaNota();
+                    user.limpatela();
                     break;
                 case 3:
-                    //limpar();
+                    user.limpatela();
                     user.listarDisciplinas();
                     break;
                 default:

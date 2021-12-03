@@ -65,11 +65,17 @@ public class Disciplina {
         System.out.println("Digite o nome da disciplina");
         String disc = input.nextLine();
         nomeDisciplina.add(disc);
+        nota1.add((float) 0.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
     }
 
-    public void removeDisciplinas(int d) {
+    public void removeDisciplinas() {
+        System.out.println("Digite o número da disciplina a ser removida:");
+        int disc = input.nextInt();
         for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
-            if (this.nomeDisciplina.get(i).equals(d)) {
+            if (this.nomeDisciplina.get(i).equals(disc)) {
                 this.nomeDisciplina.remove(i);
                 this.nota1.remove(i);
                 this.nota2.remove(i);
@@ -81,12 +87,54 @@ public class Disciplina {
 
     public void listarDisciplinas(){
         for (int i = 0; i < nomeDisciplina.size(); i++) {
-            System.out.println("|| "+i+" - "+this.nomeDisciplina.get(i));
+            if (this.mediaFinal.get(i) != 0.00) {
+                System.out.println("| ID: "+i+" - "+this.nomeDisciplina.get(i) + " | " + this.nota1.get(i) + " | " + this.nota2.get(i) + " | " + this.media.get(i) + " | " + this.mediaFinal.get(i));
+            } else {
+                System.out.println("| ID: "+i+" - "+this.nomeDisciplina.get(i) + " | " + this.nota1.get(i) + " | " + this.nota2.get(i) + " | " + this.media.get(i) + " |");
+            }
         }
     }
 
     public void adicionaNota(){
-        System.out.println("Digite o número da disciplina a ser adicionado a nota:");
-        String disc = input.next();
+        int disc = 100, pass = 0;
+        ArrayList<Integer> ids = new ArrayList<>();
+
+        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
+            ids.add(i);
+        }
+
+        do {
+            System.out.println("Digite o número da disciplina a ser adicionado a nota:");
+            disc = input.nextInt();
+            if (ids.contains(disc)) {
+                pass = 1;
+            }
+        } while (pass != 1);
+
+
+        System.out.println("Digite a primeira nota:");
+        Float nota1 = input.nextFloat();
+        System.out.println("Digite a segunda nota (coloque '0,00' se ainda não tiver o valor):");
+        Float nota2 = input.nextFloat();
+        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
+            if (this.nomeDisciplina.get(i).equals(disc)) {
+                this.nota1.set(i,nota1);
+                this.nota2.set(i,nota2);
+
+                float media_nota = ((this.nota1.get(i)*2)+(this.nota2.get(i)*3))/5;
+                this.media.set(i,media_nota);
+
+                if (this.nota2.get(i) != 0.00) {
+                    float media_final_nota = (250-(this.media.get(i)*3))/2;
+                    this.mediaFinal.set(i,media_final_nota);
+                }
+            }
+        }
+    }
+
+    public void limpatela() {
+        for (int i=0; i<100; i++) {
+            System.out.println();
+        }
     }
 }
