@@ -205,7 +205,7 @@ public class Disciplina {
             if (this.nota1.get(i) != 0.0 && this.nota2.get(i) != 0.0 && this.media.get(i) > 70) {
                 System.out.println("| "+i+" "+this.nomeDisciplina.get(i).substring(0,18)+" | Parabéns, você passou!");
             } else if (this.nota1.get(i) != 0.0 && this.nota2.get(i) != 0.0 && this.media.get(i) < 70) {
-                calculo_mediaFinal = (250-(70*3))/2;
+                calculo_mediaFinal = (250-(this.media.get(i)*3))/2;
                 System.out.println("| "+i+" "+this.nomeDisciplina.get(i).substring(0,18)+" | Média Final: "+calculo_mediaFinal);
             } else if (this.nota1.get(i) != 0.00 && this.nota2.get(i) == 0.00 && this.media.get(i) < 70) {
                 calculo_nota2 = (350-(2*this.nota1.get(i)))/3;

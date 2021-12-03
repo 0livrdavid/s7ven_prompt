@@ -9,15 +9,6 @@ public class Main {
         String disc, enter;
         int opcao;
 
-        ArrayList<String> vet1 = new ArrayList<>();
-        ArrayList<Float> vet2 = new ArrayList<>();
-        ArrayList<Float> vet3 = new ArrayList<>();
-        ArrayList<Float> vet4 = new ArrayList<>();
-        ArrayList<Float> vet5 = new ArrayList<>();
-
-
-
-
 
         System.out.println("SEJA BEM-VINDO AO S7VEN!");
         do {
