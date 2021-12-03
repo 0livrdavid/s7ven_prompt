@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Disciplina {
@@ -64,7 +65,7 @@ public class Disciplina {
     public void adicionaDisciplinas() {
         System.out.println("Digite o nome da disciplina");
         String disc = input.nextLine();
-        nomeDisciplina.add(disc);
+        nomeDisciplina.add(""+disc);
         nota1.add((float) 0.00);
         nota2.add((float) 0.00);
         media.add((float) 0.00);
@@ -97,7 +98,7 @@ public class Disciplina {
     public void listarDisciplinas(){
         System.out.println(" ID |         NOME          |  1ºBIM  |  2ºBIM  |  MÉDIA S.  |  MÉDIA F.");
         System.out.println("------------------------------------------------------------------------");
-        for (int i = 0; i < nomeDisciplina.size(); i++) {
+        for (int i = 0; i < this.nomeDisciplina.size(); i++) {
             if (this.mediaFinal.get(i) != 0.00) {
                 System.out.println("| "+i+" - "+this.nomeDisciplina.get(i).substring(0,18)+"..." + " |  " + this.nota1.get(i) + "  |  " + this.nota2.get(i) + "  |  " + this.media.get(i) + "  |  " + this.mediaFinal.get(i));
             } else {
@@ -125,7 +126,7 @@ public class Disciplina {
             System.out.println("Deseja trocar a sua nota do 1ºBim (Atual: "+this.nota1.get(disc)+")? (S ou N)");
             String resp = input.next();
 
-            if (resp == "s") {
+            if (Objects.equals(resp.toLowerCase(), "s")) {
                 System.out.println("Digite a primeira nota:");
                 nota1 = input.nextFloat();
             } else {
