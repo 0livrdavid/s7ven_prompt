@@ -151,50 +151,39 @@ public class Disciplina {
     }
 
     public void maioresNotas(){
-        String maior_nota1 = "0.00";
-        String maior_nota2 = "0.00";
-        String maior_semestre = "0.00";
+        float maior_nota1 = 0.00F;
+        String maior_nota1_nome = "";
+        float maior_nota2 = 0.00F;
+        String maior_nota2_nome = "";
+        float maior_semestre = 0.00F;
+        String maior_semestre_nome = "";
 
         for (int i = 0; i < this.nomeDisciplina.size(); i++) {
-            if (this.nota1.get(i) != 0 && Float.parseFloat(maior_nota1) < this.nota1.get(i)) {
-                maior_nota1 = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
-                maior_nota1 += String.valueOf(this.nota1.get(i));
+            if (this.nota1.get(i) != 0 && maior_nota1 < this.nota1.get(i)) {
+                maior_nota1_nome = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
+                maior_nota1 = this.nota1.get(i);
             }
-            if (this.nota2.get(i) != 0 && Float.parseFloat(maior_nota2) < this.nota2.get(i)) {
-                maior_nota2 = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
-                maior_nota2 += String.valueOf(this.nota2.get(i));
+            if (this.nota2.get(i) != 0 && maior_nota2 < this.nota2.get(i)) {
+                maior_nota2_nome = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
+                maior_nota2 = this.nota2.get(i);
             }
-            if (this.media.get(i) != 0 && Float.parseFloat(maior_semestre) < this.media.get(i)) {
-                maior_semestre = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
-                maior_semestre += String.valueOf(this.media.get(i));
+            if (this.media.get(i) != 0 && maior_semestre < this.media.get(i)) {
+                maior_semestre_nome = this.nomeDisciplina.get(i).substring(0,18)+"..."+": ";
+                maior_semestre = this.media.get(i);
             }
         }
 
-        if (maior_nota1 != "") {
-            System.out.println("1º Bimestre -> " + maior_nota1);
+        if (maior_nota1 != 0 && maior_nota1_nome != "") {
+            System.out.println("1º Bimestre -> "+ maior_nota1_nome+ maior_nota1);
         }
-        if (maior_nota2 != "") {
-            System.out.println("2º Bimestre -> " + maior_nota2);
+        if (maior_nota2 != 0 && maior_nota2_nome != "") {
+            System.out.println("2º Bimestre -> "+ maior_nota2_nome + maior_nota2);
         }
-        if (maior_semestre != "") {
-            System.out.println("Média Semestral -> " + maior_semestre);
+        if (maior_semestre != 0 && maior_semestre_nome != "") {
+            System.out.println("Média Semestral -> " + maior_semestre_nome + maior_semestre);
         }
     }
 
-    public void apagarBanco() {
-        System.out.println("Tem certeza que deseja continuar? (S ou N)");
-        String resp = input.next();
-
-        if (resp == "s") {
-            for (int i = 0; i < nomeDisciplina.size(); i++) {
-                this.nomeDisciplina.remove(i);
-                this.nota1.remove(i);
-                this.nota2.remove(i);
-                this.media.remove(i);
-                this.mediaFinal.remove(i);
-            }
-        }
-    }
 
     public void suporNotas() {
         float calculo_mediaFinal;

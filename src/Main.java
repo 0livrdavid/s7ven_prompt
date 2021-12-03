@@ -27,7 +27,6 @@ public class Main {
             System.out.println("3 - Listar Todas Disciplinas");
             System.out.println("4 - Informar Maiores Notas");
             System.out.println("5 - Supor Notas");
-            System.out.println("6 - Zerar Banco");
             System.out.println("9 - Adicionar dados");
             System.out.println("________________________________");
             System.out.print("Escolha um número para prosseguir: ");
@@ -51,15 +50,10 @@ public class Main {
                 case 4:
                     user.limpatela();
                     user.maioresNotas();
-                    user.listarDisciplinas();
                     break;
                 case 5:
                     user.limpatela();
                     user.suporNotas();
-                    break;
-                case 6:
-                    user.limpatela();
-                    user.apagarBanco();
                     break;
                 case 9:
                     user.limpatela();
