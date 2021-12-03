@@ -86,7 +86,7 @@ public class Disciplina {
         System.out.println("Tem certeza que deseja continuar? (S ou N)");
         String resp = input.next();
 
-        if (resp.toLowerCase() == "s") {
+        if (Objects.equals(resp.toLowerCase(), "s")) {
             this.nomeDisciplina.remove(disc);
             this.nota1.remove(disc);
             this.nota2.remove(disc);

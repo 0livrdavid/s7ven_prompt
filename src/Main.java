@@ -50,6 +50,7 @@ public class Main {
                     break;
                 case 6:
                     user.limpatela();
+                    user.listarDisciplinas();
                     user.removeDisciplinas();
                     break;
                 case 7:
