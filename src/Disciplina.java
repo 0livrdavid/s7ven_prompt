@@ -86,7 +86,7 @@ public class Disciplina {
         System.out.println("Tem certeza que deseja continuar? (S ou N)");
         String resp = input.next();
 
-        if (resp == "s") {
+        if (resp.toLowerCase() == "s") {
             this.nomeDisciplina.remove(disc);
             this.nota1.remove(disc);
             this.nota2.remove(disc);
@@ -142,10 +142,12 @@ public class Disciplina {
         this.nota1.set(disc,nota1);
         this.nota2.set(disc,nota2);
 
-        float media_nota = ((this.nota1.get(disc)*2)+(this.nota2.get(disc)*3))/5;
-        this.media.set(disc,media_nota);
+        if (this.nota1.get(disc) != 0.00 && this.nota2.get(disc) != 0.00) {
+            float media_nota = ((this.nota1.get(disc)*2)+(this.nota2.get(disc)*3))/5;
+            this.media.set(disc,media_nota);
+        }
 
-        if (this.nota2.get(disc) != 0.00 && this.media.get(disc) < 70) {
+        if (this.nota1.get(disc) != 0.00 && this.nota2.get(disc) != 0.00 && this.media.get(disc) < 70) {
             float media_final_nota = (250-(this.media.get(disc)*3))/2;
             this.mediaFinal.set(disc,media_final_nota);
         }
