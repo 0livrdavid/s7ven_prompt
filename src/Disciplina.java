@@ -188,15 +188,11 @@ public class Disciplina {
     }
 
     public void apagarBanco() {
-        System.out.println(nomeDisciplina.size());
-        for (int i = 0; i < nomeDisciplina.size(); i++) {
-            System.out.println(i);
-            this.nomeDisciplina.remove(i);
-            this.nota1.remove(i);
-            this.nota2.remove(i);
-            this.media.remove(i);
-            this.mediaFinal.remove(i);
-        }
+        this.nomeDisciplina = new ArrayList<>();
+        this.nota1 = new ArrayList<>();
+        this.nota2 = new ArrayList<>();
+        this.media = new ArrayList<>();
+        this.mediaFinal = new ArrayList<>();
     }
 
     public void suporNotas() {
