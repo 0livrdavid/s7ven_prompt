@@ -96,20 +96,17 @@ public class Disciplina {
     }
 
     public void adicionaNota(){
-        int disc = 100, pass = 0;
-        ArrayList<Integer> ids = new ArrayList<>();
+        int disc;
+        boolean pass = true;
 
-        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
-            ids.add(i);
-        }
 
         do {
-            System.out.println("Digite o número da disciplina a ser adicionado a nota:");
+            System.out.println("Digite o id da disciplina a ser adicionado a nota:");
             disc = input.nextInt();
-            if (ids.contains(disc)) {
-                pass = 1;
+            if (disc >= 0 && disc < this.nomeDisciplina.size()) {
+                break;
             }
-        } while (pass != 1);
+        } while (true);
 
 
         System.out.println("Digite a primeira nota:");

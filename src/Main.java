@@ -34,6 +34,10 @@ public class Main {
                     user.limpatela();
                     user.listarDisciplinas();
                     break;
+                case 4:
+                    user.limpatela();
+                    user.listarDisciplinas();
+                    break;
                 default:
                     break;
             }
