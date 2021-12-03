@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +9,16 @@ public class Main {
         String disc, enter;
         int opcao;
 
+        ArrayList<String> vet1 = new ArrayList<>();
+        ArrayList<Float> vet2 = new ArrayList<>();
+        ArrayList<Float> vet3 = new ArrayList<>();
+        ArrayList<Float> vet4 = new ArrayList<>();
+        ArrayList<Float> vet5 = new ArrayList<>();
+
+
+
+
+
         System.out.println("SEJA BEM-VINDO AO S7VEN!");
         do {
             System.out.println("________________________________");
@@ -16,6 +27,7 @@ public class Main {
             System.out.println("3 - Listar Todas Disciplinas");
             System.out.println("4 - Informar Maiores Notas");
             System.out.println("5 - Zerar Banco");
+            System.out.println("9 - Adicionar dados");
             System.out.println("________________________________");
             System.out.print("Escolha um número para prosseguir: ");
             opcao = input.nextInt();
@@ -43,6 +55,10 @@ public class Main {
                 case 5:
                     user.limpatela();
                     user.apagarBanco();
+                    break;
+                case 9:
+                    user.limpatela();
+                    user.adicionarDados();
                     break;
                 default:
                     break;

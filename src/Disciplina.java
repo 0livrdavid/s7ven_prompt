@@ -177,4 +177,37 @@ public class Disciplina {
             System.out.println();
         }
     }
+
+
+    public void adicionarDados() {
+        nomeDisciplina.add("FUNDAMENTOS MATEMÁTICOS PARA COMPUTAÇÃO");
+        nota1.add((float) 100.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
+
+        nomeDisciplina.add("PARADIGMA DE ORIENTAÇÃO À OBJETO");
+        nota1.add((float) 100.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
+
+        nomeDisciplina.add("PROJETO INTEGRADOR: Processos de Arquitetura e Análise de Software");
+        nota1.add((float) 96.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
+
+        nomeDisciplina.add("ANÁLISE E PROJETO DE PRODUTOS DE SOFTWARE");
+        nota1.add((float) 73.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
+
+        nomeDisciplina.add("SISTEMAS OPERACIONAIS");
+        nota1.add((float) 86.00);
+        nota2.add((float) 0.00);
+        media.add((float) 0.00);
+        mediaFinal.add((float) 0.00);
+    }
 }
