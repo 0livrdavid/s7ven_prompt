@@ -97,8 +97,6 @@ public class Disciplina {
 
     public void adicionaNota(){
         int disc;
-        boolean pass = true;
-
 
         do {
             System.out.println("Digite o id da disciplina a ser adicionado a nota:");
