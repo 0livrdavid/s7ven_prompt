@@ -106,24 +106,22 @@ public class Disciplina {
             }
         } while (true);
 
+        System.out.println(disc);
 
         System.out.println("Digite a primeira nota:");
         Float nota1 = input.nextFloat();
         System.out.println("Digite a segunda nota (coloque '0,00' se ainda não tiver o valor):");
         Float nota2 = input.nextFloat();
-        for (int i = 0; i <= this.nomeDisciplina.size(); i++) {
-            if (this.nomeDisciplina.get(i).equals(disc)) {
-                this.nota1.set(i,nota1);
-                this.nota2.set(i,nota2);
 
-                float media_nota = ((this.nota1.get(i)*2)+(this.nota2.get(i)*3))/5;
-                this.media.set(i,media_nota);
+        this.nota1.set(disc,nota1);
+        this.nota2.set(disc,nota2);
 
-                if (this.nota2.get(i) != 0.00) {
-                    float media_final_nota = (250-(this.media.get(i)*3))/2;
-                    this.mediaFinal.set(i,media_final_nota);
-                }
-            }
+        float media_nota = ((this.nota1.get(disc)*2)+(this.nota2.get(disc)*3))/5;
+        this.media.set(disc,media_nota);
+
+        if (this.nota2.get(disc) != 0.00) {
+            float media_final_nota = (250-(this.media.get(disc)*3))/2;
+            this.mediaFinal.set(disc,media_final_nota);
         }
     }
 
