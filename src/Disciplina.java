@@ -184,6 +184,17 @@ public class Disciplina {
         }
     }
 
+    public void apagarBanco() {
+        System.out.println(nomeDisciplina.size());
+        for (int i = 0; i < nomeDisciplina.size(); i++) {
+            System.out.println(i);
+            this.nomeDisciplina.remove(i);
+            this.nota1.remove(i);
+            this.nota2.remove(i);
+            this.media.remove(i);
+            this.mediaFinal.remove(i);
+        }
+    }
 
     public void suporNotas() {
         float calculo_mediaFinal;
